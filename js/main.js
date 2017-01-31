@@ -1,5 +1,6 @@
 /// <reference path="../node_modules/@types/jquery/index.d.ts"/>
 /// <reference path="../node_modules/@types/dat-gui/index.d.ts"/>
+/// <reference path="../node_modules/@types/snapsvg/index.d.ts"/>
 class Point {
     constructor(x, y) {
         this.x = x;
@@ -25,6 +26,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let canvas = document.getElementById('canvas');
     canvas.width = canvas.clientWidth * window.devicePixelRatio;
     canvas.height = canvas.clientHeight * window.devicePixelRatio;
+    let svgElement = document.getElementById('svg');
+    svgElement.style.visibility = 'hidden';
+    let svg = Snap("#svg");
+    svg.width = canvas.clientWidth;
+    svg.height = canvas.clientWidth;
     let context = canvas.getContext('2d');
     $ = jQuery;
     let position = $(canvas).position();
@@ -43,8 +49,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
         color: '#000000',
         speed: 10,
         nHandles: 3,
+        recordSVG: false,
         reset: init,
-        toggleHandles: () => handles.forEach((h) => h.toggle())
+        toggleHandles: () => handles.forEach((h) => h.toggle()),
+        saveSVG: () => {
+            svgElement.style.visibility = 'visible';
+            saveSvgFile(svgElement, 'ili');
+            svgElement.style.visibility = 'hidden';
+        }
     };
     var gui = new dat.GUI();
     gui.addColor(city, 'color');
@@ -53,6 +65,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     gui.add(city, 'angleVariation', 0, 360);
     gui.add(city, 'toggleHandles');
     gui.add(city, 'reset');
+    gui.add(city, 'recordSVG');
+    gui.add(city, 'saveSVG');
     var handleController = gui.add(city, 'nHandles', 1, 10).step(1);
     handleController.onFinishChange(function (value) {
         for (let n = 0; n < handles.length; n++) {
@@ -133,15 +147,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 init();
             }
         }
-        draw() {
-            context.beginPath();
-            context.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI, false);
-            context.fillStyle = this.color;
-            context.fill();
-            context.lineWidth = 2;
-            context.strokeStyle = '#003300';
-            context.stroke();
-        }
+        // draw() {
+        //   context.beginPath();
+        //   context.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI, false);
+        //   context.fillStyle = this.color;
+        //   context.fill();
+        //   context.lineWidth = 2;
+        //   context.strokeStyle = '#003300';
+        //   context.stroke();
+        // }
         toggle() {
             this.visible = !this.visible;
             this.handleElement.style.visibility = this.visible ? 'visible' : 'hidden';
@@ -223,6 +237,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
             context.lineTo(this.position.x, this.position.y);
             context.closePath();
             context.stroke();
+            if (city.recordSVG) {
+                let line = svg.line(this.previousPosition.x / window.devicePixelRatio, this.previousPosition.y / window.devicePixelRatio, this.position.x / window.devicePixelRatio, this.position.y / window.devicePixelRatio);
+                line.attr({
+                    stroke: city.color,
+                    strokeWidth: 1 / window.devicePixelRatio
+                });
+            }
         }
     }
     for (let i = 0; i < city.nActors; i++) {
@@ -241,6 +262,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         canvas.height = canvas.clientHeight * window.devicePixelRatio;
         context.translate(0.5, 0.5);
         context.clearRect(0, 0, canvas.width, canvas.height);
+        svg.clear();
         city.width = canvas.width;
         city.height = canvas.height;
         // actors[0].initialize(new Point(20, 20), 0);
@@ -287,3 +309,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
     }
 });
+function saveSvgFile(svgEl, linkLabel) {
+    svgEl.setAttribute('version', '1.1');
+    svgEl.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    var markup = svgEl.outerHTML;
+    var b64 = btoa(markup);
+    var aEl = document.createElement('a');
+    aEl.setAttribute('download', linkLabel + '.svg');
+    aEl.href = 'data:image/svg+xml;base64,\n' + b64;
+    document.body.appendChild(aEl);
+    aEl.click();
+}
