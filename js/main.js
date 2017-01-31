@@ -44,14 +44,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
         speed: 10,
         nHandles: 3,
         reset: init,
-        hideHandles: () => handles.forEach((h) => h.toggle())
+        toggleHandles: () => handles.forEach((h) => h.toggle())
     };
     var gui = new dat.GUI();
     gui.addColor(city, 'color');
     gui.add(city, 'speed', 1, 100);
-    gui.add(city, 'hideHandles');
+    gui.add(city, 'generationProbability', 1, 100);
+    gui.add(city, 'angleVariation', 0, 360);
+    gui.add(city, 'toggleHandles');
     gui.add(city, 'reset');
-    var handleController = gui.add(city, 'nHandles', 1, 10);
+    var handleController = gui.add(city, 'nHandles', 1, 10).step(1);
     handleController.onFinishChange(function (value) {
         for (let n = 0; n < handles.length; n++) {
             handles[n].destroy();
@@ -101,10 +103,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
             this.handleElement.style.position = 'absolute';
             this.handleElement.style.left = (this.position.x / window.devicePixelRatio) + 'px';
             this.handleElement.style.top = (this.position.y / window.devicePixelRatio) + 'px';
+            this.handleElement.style.visibility = 'hidden';
         }
         mouseDown(mousePosition) {
             console.log('mp: ' + mousePosition.x + ', ' + mousePosition.y + ' -- x: ' + this.position.x + ', y: ' + this.position.y + ', : ' + this.position.distTo(mousePosition));
-            if (this.position.distTo(mousePosition) < this.radius * 3) {
+            if (this.position.distTo(mousePosition) < this.radius * 2) {
                 this.dragged = true;
                 this.offset = mousePosition.subtract(this.position);
                 console.log('handle down');
