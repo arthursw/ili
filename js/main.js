@@ -53,6 +53,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     gui.add(city, 'reset');
     var handleController = gui.add(city, 'nHandles', 1, 10);
     handleController.onFinishChange(function (value) {
+        for (let n = 0; n < handles.length; n++) {
+            handles[n].destroy();
+        }
         handles = [];
         for (let n = 0; n < city.nHandles; n++) {
             let handle = new Handle(new Point(Math.random() * city.width, Math.random() * city.height));
@@ -139,6 +142,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         toggle() {
             this.visible = !this.visible;
             this.handleElement.style.visibility = this.visible ? 'visible' : 'hidden';
+        }
+        destroy() {
+            this.handleElement.remove();
         }
     }
     class Actor {
