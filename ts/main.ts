@@ -41,6 +41,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	let cityWidth = canvas.width
 	let cityHeight = canvas.height
 
+	let handles = []
+
 	let city = {
 		width: cityWidth,
 		height: cityHeight,
@@ -53,16 +55,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		color: '#000000',
 		speed: 10,
 		nHandles: 3,
-		reset: init
+		reset: init,
+		hideHandles: () => handles.forEach((h)=>h.toggle())
 	}
-
 
   var gui = new dat.GUI();
   gui.addColor(city, 'color');
   gui.add(city, 'speed', 1, 100);
-  gui.add(city, 'reset');
-
-	let handles = []
+  gui.add(city, 'hideHandles');
+	gui.add(city, 'reset');
 
 	var handleController = gui.add(city, 'nHandles', 1, 10);
 	handleController.onFinishChange(function(value) {
@@ -104,16 +105,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			color: string
 			offset: Point
 			dragged: boolean
-
+			handleElement: any
+			visible: boolean
 			constructor(pos: Point) {
 				this.position = pos
 				this.radius = 17
 				this.color = '#CC3482'
 				this.dragged = false
+				this.handleElement = document.createElement("div");
+				this.handleElement.setAttribute('class','handle')
+				this.visible = true
+				document.body.insertBefore(this.handleElement, canvas)
+
+
+				this.handleElement.style.backgroundColor = "#6699ff";
+				this.handleElement.style.borderRadius = '10px';
+				this.handleElement.style.width = '15px';
+				this.handleElement.style.height = '15px';
+				this.handleElement.style.position = 'absolute'
+				this.handleElement.style.left = (this.position.x/window.devicePixelRatio) + 'px';
+				this.handleElement.style.top = (this.position.y/window.devicePixelRatio) + 'px';
 			}
 			mouseDown(mousePosition: Point) {
 				console.log('mp: ' + mousePosition.x + ', ' + mousePosition.y + ' -- x: ' + this.position.x + ', y: ' + this.position.y + ', : ' + this.position.distTo(mousePosition))
-				if(this.position.distTo(mousePosition) < this.radius) {
+				if(this.position.distTo(mousePosition) < this.radius*3) {
 					this.dragged = true
 					this.offset = mousePosition.subtract(this.position)
 					console.log('handle down')
@@ -124,7 +139,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					console.log('handle move to: ' + this.position.x)
 					this.position = mousePosition.subtract(this.offset)
 					context.clearRect(0, 0, city.width, city.height)
-					this.draw()
+					// this.draw()
+					this.handleElement.style.left = (this.position.x/window.devicePixelRatio) + 'px';
+					this.handleElement.style.top = (this.position.y/window.devicePixelRatio) + 'px';
 				}
 			}
 			mouseUp(mousePosition: Point) {
@@ -132,6 +149,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					console.log('handle up to: ' + this.position.x)
 					this.position = mousePosition.subtract(this.offset)
 					this.dragged = false
+					this.handleElement.style.left = (this.position.x/window.devicePixelRatio) + 'px';
+					this.handleElement.style.top = (this.position.y/window.devicePixelRatio) + 'px';
 					init()
 				}
 			}
@@ -143,6 +162,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	      context.lineWidth = 2;
 	      context.strokeStyle = '#003300';
 	      context.stroke();
+			}
+			toggle() {
+				this.visible = !this.visible;
+				this.handleElement.style.visibility = this.visible ? 'visible' : 'hidden'
 			}
 	}
 
@@ -279,9 +302,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		// actors[3].initialize(new Point(20, city.height-20), 0);
 
 		for(let n=0 ; n<city.nHandles ; n++) {
-			console.log('init actor ' + n + ' at pos: ' + handles[n].position.x + ', ' + handles[n].position.y)
 			actors[n].initialize(handles[n].position.clone(), 0)
-			handles[n].draw()
 		}
 	}
 
