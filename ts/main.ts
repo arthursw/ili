@@ -12,6 +12,18 @@ class Point {
 	clone() {
 		return new Point(this.x, this.y)
 	}
+	add(b:Point) {
+		return new Point(this.x+b.x, this.y+b.y)
+	}
+	subtract(b:Point) {
+		return new Point(this.x-b.x, this.y-b.y)
+	}
+	length() {
+		return Math.sqrt(this.x * this.x + this.y * this.y)
+	}
+	distTo(b:Point) {
+		return b.subtract(this).length()
+	}
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -40,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		generationProbability: 10,
 		color: '#000000',
 		speed: 10,
+		nHandles: 3,
 		reset: init
 	}
 
@@ -48,6 +61,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
   gui.addColor(city, 'color');
   gui.add(city, 'speed', 1, 100);
   gui.add(city, 'reset');
+
+	let handles = []
+
+	var handleController = gui.add(city, 'nHandles', 1, 10);
+	handleController.onFinishChange(function(value) {
+		handles = []
+		for(let n=0 ; n<city.nHandles ; n++) {
+			let handle = new Handle(new Point(Math.random()*city.width, Math.random()*city.height))
+			handles.push(handle)
+		}
+	  init()
+	});
 
 	let OUT = -500
 	let actors: Array<Actor> = []
@@ -71,6 +96,54 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	function vToString(v: Point) {
 		return 'x: ' + v.x + ', y: ' + v.y
+	}
+
+	class Handle {
+			position: Point
+			radius: number
+			color: string
+			offset: Point
+			dragged: boolean
+
+			constructor(pos: Point) {
+				this.position = pos
+				this.radius = 17
+				this.color = '#CC3482'
+				this.dragged = false
+			}
+			mouseDown(mousePosition: Point) {
+				console.log('mp: ' + mousePosition.x + ', ' + mousePosition.y + ' -- x: ' + this.position.x + ', y: ' + this.position.y + ', : ' + this.position.distTo(mousePosition))
+				if(this.position.distTo(mousePosition) < this.radius) {
+					this.dragged = true
+					this.offset = mousePosition.subtract(this.position)
+					console.log('handle down')
+				}
+			}
+			mouseMove(mousePosition: Point) {
+				if(this.dragged) {
+					console.log('handle move to: ' + this.position.x)
+					this.position = mousePosition.subtract(this.offset)
+					context.clearRect(0, 0, city.width, city.height)
+					this.draw()
+				}
+			}
+			mouseUp(mousePosition: Point) {
+				if(this.dragged) {
+					console.log('handle up to: ' + this.position.x)
+					this.position = mousePosition.subtract(this.offset)
+					this.dragged = false
+					init()
+				}
+			}
+			draw() {
+	      context.beginPath();
+	      context.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI, false);
+	      context.fillStyle = this.color;
+	      context.fill();
+	      context.lineWidth = 2;
+	      context.strokeStyle = '#003300';
+	      context.stroke();
+			}
 	}
 
 	class Actor {
@@ -165,6 +238,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		draw() {
 			context.strokeStyle = city.color;
+			context.lineWidth = 1;
+			context.lineCap = 'square';
+
 			context.beginPath();
 			context.moveTo(this.previousPosition.x, this.previousPosition.y);
 			context.lineTo(this.position.x, this.position.y);
@@ -177,7 +253,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		actors.push(new Actor())
 	}
 
-
+	for(let n=0 ; n<city.nHandles ; n++) {
+		let handle = new Handle(new Point(Math.random()*city.width, Math.random()*city.height))
+		handles.push(handle)
+	}
 
 	function init() {
 
@@ -191,17 +270,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		context.translate(0.5, 0.5);
 		context.clearRect(0, 0, canvas.width, canvas.height);
 
-
-		context.lineWidth = 1;
-		context.lineCap = 'square';
-
 		city.width = canvas.width
 		city.height = canvas.height
 
-		actors[0].initialize(new Point(20, 20), 0);
-		actors[1].initialize(new Point(city.width-20, city.height-20), 2*90);
+		// actors[0].initialize(new Point(20, 20), 0);
+		// actors[1].initialize(new Point(city.width-20, city.height-20), 2*90);
 		// actors[2].initialize(new Point(city.width-20, 20), 2*90);
 		// actors[3].initialize(new Point(20, city.height-20), 0);
+
+		for(let n=0 ; n<city.nHandles ; n++) {
+			console.log('init actor ' + n + ' at pos: ' + handles[n].position.x + ', ' + handles[n].position.y)
+			actors[n].initialize(handles[n].position.clone(), 0)
+			handles[n].draw()
+		}
 	}
 
 	function animate() {
@@ -220,4 +301,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	}
 
 	window.onresize = resize;
+
+	let mouseX = 0;
+	let mouseY = 0;
+
+	document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+	document.addEventListener( 'mouseup', onDocumentMouseUp, false );
+
+	function onDocumentMouseDown( event ) {
+		let mousePosition = new Point(event.clientX * window.devicePixelRatio, event.clientY * window.devicePixelRatio)
+		for(let handle of handles) {
+			handle.mouseDown(mousePosition)
+		}
+	}
+	function onDocumentMouseMove( event ) {
+		let mousePosition = new Point(event.clientX * window.devicePixelRatio, event.clientY * window.devicePixelRatio)
+		for(let handle of handles) {
+			handle.mouseMove(mousePosition)
+		}
+	}
+	function onDocumentMouseUp( event ) {
+		let mousePosition = new Point(event.clientX * window.devicePixelRatio, event.clientY * window.devicePixelRatio)
+		for(let handle of handles) {
+			handle.mouseUp(mousePosition)
+		}
+	}
 });
