@@ -1,6 +1,6 @@
 /// <reference path="../node_modules/@types/jquery/index.d.ts"/>
 /// <reference path="../node_modules/@types/dat-gui/index.d.ts"/>
-/// <reference path="../node_modules/@types/snapsvg/index.d.ts"/>
+/// <reference path="../svg.js.d.ts"/>
 class Point {
     constructor(x, y) {
         this.x = x;
@@ -15,20 +15,30 @@ class Point {
     subtract(b) {
         return new Point(this.x - b.x, this.y - b.y);
     }
+    multiply(f) {
+        return new Point(this.x * f, this.y * f);
+    }
+    divide(f) {
+        return new Point(this.x / f, this.y / f);
+    }
     length() {
         return Math.sqrt(this.x * this.x + this.y * this.y);
     }
     distTo(b) {
         return b.subtract(this).length();
     }
+    alignedWith(b, c) {
+        return this.x * (b.y - c.y) + b.x * (c.y - this.y) + c.x * (this.y - c.y) < 0.01;
+    }
 }
 document.addEventListener("DOMContentLoaded", function (event) {
     let canvas = document.getElementById('canvas');
     canvas.width = canvas.clientWidth * window.devicePixelRatio;
     canvas.height = canvas.clientHeight * window.devicePixelRatio;
-    let svgElement = document.getElementById('svg');
+    let svg = SVG("svgContainer"); //.size('100%', '100%').spof()
+    SVG.on(window, 'resize', function () { svg.spof(); });
+    let svgElement = document.getElementById('svgContainer');
     svgElement.style.visibility = 'hidden';
-    let svg = Snap("#svg");
     svg.width = canvas.clientWidth;
     svg.height = canvas.clientWidth;
     let context = canvas.getContext('2d');
@@ -37,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let cityWidth = canvas.width;
     let cityHeight = canvas.height;
     let handles = [];
+    let nHandleMax = 10;
     let city = {
         width: cityWidth,
         height: cityHeight,
@@ -46,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         lifetimeMax: 1000,
         angleVariation: 0,
         generationProbability: 10,
-        color: '#000000',
         speed: 10,
         nHandles: 3,
         recordSVG: false,
@@ -54,31 +64,46 @@ document.addEventListener("DOMContentLoaded", function (event) {
         toggleHandles: () => handles.forEach((h) => h.toggle()),
         saveSVG: () => {
             svgElement.style.visibility = 'visible';
-            saveSvgFile(svgElement, 'ili');
+            saveSvgFile(svg, 'ili');
             svgElement.style.visibility = 'hidden';
+        },
+        savePNG: () => {
+            canvas.toBlob(function (blob) {
+                saveAs(blob, 'lil.png');
+            });
         }
     };
     var gui = new dat.GUI();
-    gui.addColor(city, 'color');
+    let colorControllers = [];
+    for (let n = 0; n < nHandleMax; n++) {
+        city['color' + n] = '#000000';
+        colorControllers.push(gui.addColor(city, 'color' + n));
+        if (n >= city.nHandles) {
+            $(colorControllers[n].__li).hide();
+        }
+    }
     gui.add(city, 'speed', 1, 100);
     gui.add(city, 'generationProbability', 1, 100);
     gui.add(city, 'angleVariation', 0, 360);
-    gui.add(city, 'toggleHandles');
-    gui.add(city, 'reset');
-    gui.add(city, 'recordSVG');
-    gui.add(city, 'saveSVG');
     var handleController = gui.add(city, 'nHandles', 1, 10).step(1);
     handleController.onFinishChange(function (value) {
         for (let n = 0; n < handles.length; n++) {
             handles[n].destroy();
+            $(colorControllers[n].__li).hide();
         }
         handles = [];
         for (let n = 0; n < city.nHandles; n++) {
             let handle = new Handle(new Point(Math.random() * city.width, Math.random() * city.height));
             handles.push(handle);
+            $(colorControllers[n].__li).show();
         }
         init();
     });
+    gui.add(city, 'toggleHandles');
+    gui.add(city, 'reset');
+    gui.add(city, 'recordSVG');
+    gui.add(city, 'saveSVG');
+    gui.add(city, 'savePNG');
     let OUT = -500;
     let actors = [];
     let nInitializedActors = 0;
@@ -164,19 +189,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
         constructor() {
             this.speed = city.speed;
             this.reset();
+            this.polyline = null;
         }
         reset() {
             this.position = new Point(-OUT, -OUT);
             this.previousPosition = new Point(-OUT, -OUT);
             this.positionFloat = new Point(-OUT, -OUT);
             this.initialized = false;
+            this.polyline = null;
         }
-        initialize(pos = null, angle = null, incrementNInitializedActors = true) {
+        initialize(pos = null, angle = null, incrementNInitializedActors = true, color = null) {
+            this.color = color;
             // if position is negative: intialize this position at a random actor position
             if (pos == null) {
                 if (nInitializedActors > 0) {
                     let n = Math.floor(Math.random() * (nInitializedActors));
                     pos = actors[n].position.clone();
+                    this.color = actors[n].color;
                 }
                 else {
                     pos = new Point(city.width / 2, city.height / 2);
@@ -193,6 +222,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             this.time = 0;
             this.initialized = true;
             this.speed = city.speed;
+            this.polyline = null;
             if (incrementNInitializedActors) {
                 nInitializedActors++;
             }
@@ -220,12 +250,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
             this.time++;
             if (Math.random() * 100 < city.generationProbability) {
                 if (nInitializedActors < actors.length) {
-                    actors[nInitializedActors].initialize(this.position);
+                    actors[nInitializedActors].initialize(this.position, null, true, this.color);
                 }
             }
         }
         draw() {
-            context.strokeStyle = city.color;
+            if (!this.initialized) {
+                return;
+            }
+            context.strokeStyle = this.color;
             context.lineWidth = 1;
             context.lineCap = 'square';
             context.beginPath();
@@ -234,11 +267,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
             context.closePath();
             context.stroke();
             if (city.recordSVG) {
-                let line = svg.line(this.previousPosition.x / window.devicePixelRatio, this.previousPosition.y / window.devicePixelRatio, this.position.x / window.devicePixelRatio, this.position.y / window.devicePixelRatio);
-                line.attr({
-                    stroke: city.color,
-                    strokeWidth: 1 / window.devicePixelRatio
-                });
+                let pp = this.previousPosition.divide(window.devicePixelRatio);
+                let p = this.position.divide(window.devicePixelRatio);
+                if (this.polyline == null) {
+                    this.polyline = svg.polyline([[pp.x, pp.y], [p.x, p.y]]);
+                    this.polyline.stroke({ width: 0.5, color: this.color }).fill('none');
+                }
+                else {
+                    let points = this.polyline.array();
+                    let secondLast = points.value[points.value.length - 2];
+                    let secondLastPoint = new Point(secondLast[0], secondLast[1]);
+                    secondLastPoint = secondLastPoint.divide(window.devicePixelRatio);
+                    if (secondLastPoint.alignedWith(this.previousPosition, this.position)) {
+                        points.value[points.value.length - 1][0] = p.x;
+                        points.value[points.value.length - 1][1] = p.y;
+                    }
+                    else {
+                        points.value.push([p.x, p.y]);
+                    }
+                    this.polyline.plot(points);
+                }
             }
         }
     }
@@ -266,7 +314,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         // actors[2].initialize(new Point(city.width-20, 20), 2*90);
         // actors[3].initialize(new Point(20, city.height-20), 0);
         for (let n = 0; n < city.nHandles; n++) {
-            actors[n].initialize(handles[n].position.clone(), 0);
+            actors[n].initialize(handles[n].position.clone(), Math.floor(Math.random() * 4) * 90, true, city['color' + n]);
         }
     }
     function animate() {
@@ -323,9 +371,7 @@ function saveSvgFile(svgElement, filename) {
     catch (e) {
         alert("blob not supported");
     }
-    svgElement.setAttribute('version', '1.1');
-    svgElement.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-    var blob = new Blob([svgElement.outerHTML], { type: "image/svg+xml" });
+    var blob = new Blob([svgElement.svg()], { type: "image/svg+xml" });
     saveAs(blob, filename + ".svg");
 }
 ;

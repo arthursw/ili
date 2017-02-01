@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
 		<style>
-			#canvas, #svg, #container {
+			#canvas, #svg, #svgContainer {
 				position: fixed;
 				top: 0;
 				left: 0;
@@ -33,15 +33,12 @@
 	</head>
 	<body>
 		<canvas id="canvas"></canvas>
-
-		<div id="container">
-			<svg id="svg"></svg>
-		</div>
+		<div id="svgContainer"></div>
 		
 
 
 		<script type="text/javascript" src="dat.gui.min.js"></script>
-		<script type="text/javascript" src="snap.svg-min.js"></script>
+		<script type="text/javascript" src="svg.min.js"></script>
 		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="FileSaver.min.js"></script>
 		<script src="js/main.js"></script>
