@@ -150,16 +150,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				this.handleElement.style.visibility = 'hidden'
 			}
 			mouseDown(mousePosition: Point) {
-				console.log('mp: ' + mousePosition.x + ', ' + mousePosition.y + ' -- x: ' + this.position.x + ', y: ' + this.position.y + ', : ' + this.position.distTo(mousePosition))
 				if(this.position.distTo(mousePosition) < this.radius*2) {
 					this.dragged = true
 					this.offset = mousePosition.subtract(this.position)
-					console.log('handle down')
 				}
 			}
 			mouseMove(mousePosition: Point) {
 				if(this.dragged) {
-					console.log('handle move to: ' + this.position.x)
 					this.position = mousePosition.subtract(this.offset)
 					context.clearRect(0, 0, city.width, city.height)
 					// this.draw()
@@ -169,7 +166,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 			mouseUp(mousePosition: Point) {
 				if(this.dragged) {
-					console.log('handle up to: ' + this.position.x)
 					this.position = mousePosition.subtract(this.offset)
 					this.dragged = false
 					this.handleElement.style.left = (this.position.x/window.devicePixelRatio) + 'px';
@@ -385,14 +381,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	}
 });
 
-function saveSvgFile(svgEl, linkLabel) {
-    svgEl.setAttribute('version', '1.1');
-    svgEl.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-    var markup = svgEl.outerHTML;
-    var b64 = btoa(markup);
-    var aEl = document.createElement('a');
-    aEl.setAttribute('download', linkLabel + '.svg');
-    aEl.href = 'data:image/svg+xml;base64,\n' + b64;
-    document.body.appendChild(aEl);
-    aEl.click();
-}
+// function saveSvgFile(svgEl, linkLabel) {
+//     svgEl.setAttribute('version', '1.1');
+//     svgEl.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+//     var markup = svgEl.outerHTML;
+//     var b64 = btoa(markup);
+//     var aEl = document.createElement('a');
+//     aEl.setAttribute('download', linkLabel + '.svg');
+//     aEl.href = 'data:image/svg+xml;base64,\n' + b64;
+//     document.body.appendChild(aEl);
+//     aEl.click();
+// }
+
+function saveSvgFile(svgElement, filename){
+    try {
+        var isFileSaverSupported = !!new Blob();
+    } catch (e) {
+        alert("blob not supported");
+    }
+	svgElement.setAttribute('version', '1.1');
+    svgElement.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+
+    var blob = new Blob([svgElement.outerHTML], {type: "image/svg+xml"});
+    saveAs(blob, filename + ".svg");
+};
