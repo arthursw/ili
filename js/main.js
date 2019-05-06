@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         },
         savePNG: () => {
             canvas.toBlob(function (blob) {
-                saveAs(blob, 'lil.png');
+                saveAs(blob, 'ili.png');
             });
         }
     };
