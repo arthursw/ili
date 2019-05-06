@@ -1,54 +1,55 @@
 /// <reference path="../node_modules/@types/jquery/index.d.ts"/>
 /// <reference path="../node_modules/@types/dat-gui/index.d.ts"/>
 /// <reference path="../svg.js.d.ts"/>
-class Point {
-    constructor(x, y) {
+var Point = (function () {
+    function Point(x, y) {
         this.x = x;
         this.y = y;
     }
-    clone() {
+    Point.prototype.clone = function () {
         return new Point(this.x, this.y);
-    }
-    add(b) {
+    };
+    Point.prototype.add = function (b) {
         return new Point(this.x + b.x, this.y + b.y);
-    }
-    subtract(b) {
+    };
+    Point.prototype.subtract = function (b) {
         return new Point(this.x - b.x, this.y - b.y);
-    }
-    multiply(f) {
+    };
+    Point.prototype.multiply = function (f) {
         return new Point(this.x * f, this.y * f);
-    }
-    divide(f) {
+    };
+    Point.prototype.divide = function (f) {
         return new Point(this.x / f, this.y / f);
-    }
-    length() {
+    };
+    Point.prototype.length = function () {
         return Math.sqrt(this.x * this.x + this.y * this.y);
-    }
-    distTo(b) {
+    };
+    Point.prototype.distTo = function (b) {
         return b.subtract(this).length();
-    }
-    alignedWith(b, c) {
+    };
+    Point.prototype.alignedWith = function (b, c) {
         return this.x * (b.y - c.y) + b.x * (c.y - this.y) + c.x * (this.y - c.y) < 0.01;
-    }
-}
+    };
+    return Point;
+}());
 document.addEventListener("DOMContentLoaded", function (event) {
-    let canvas = document.getElementById('canvas');
+    var canvas = document.getElementById('canvas');
     canvas.width = canvas.clientWidth * window.devicePixelRatio;
     canvas.height = canvas.clientHeight * window.devicePixelRatio;
-    let svg = SVG("svgContainer"); //.size('100%', '100%').spof()
+    var svg = SVG("svgContainer"); //.size('100%', '100%').spof()
     SVG.on(window, 'resize', function () { svg.spof(); });
-    let svgElement = document.getElementById('svgContainer');
+    var svgElement = document.getElementById('svgContainer');
     svgElement.style.visibility = 'hidden';
     svg.width = canvas.clientWidth;
     svg.height = canvas.clientWidth;
-    let context = canvas.getContext('2d');
+    var context = canvas.getContext('2d');
     $ = jQuery;
-    let position = $(canvas).position();
-    let cityWidth = canvas.width;
-    let cityHeight = canvas.height;
-    let handles = [];
-    let nHandleMax = 10;
-    let city = {
+    var position = $(canvas).position();
+    var cityWidth = canvas.width;
+    var cityHeight = canvas.height;
+    var handles = [];
+    var nHandleMax = 10;
+    var city = {
         width: cityWidth,
         height: cityHeight,
         left: position.left,
@@ -61,21 +62,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
         nHandles: 3,
         recordSVG: false,
         reset: init,
-        toggleHandles: () => handles.forEach((h) => h.toggle()),
-        saveSVG: () => {
+        toggleHandles: function () { return handles.forEach(function (h) { return h.toggle(); }); },
+        saveSVG: function () {
             svgElement.style.visibility = 'visible';
             saveSvgFile(svg, 'ili');
             svgElement.style.visibility = 'hidden';
         },
-        savePNG: () => {
+        savePNG: function () {
             canvas.toBlob(function (blob) {
                 saveAs(blob, 'lil.png');
             });
         }
     };
     var gui = new dat.GUI();
-    let colorControllers = [];
-    for (let n = 0; n < nHandleMax; n++) {
+    var colorControllers = [];
+    for (var n = 0; n < nHandleMax; n++) {
         city['color' + n] = '#000000';
         colorControllers.push(gui.addColor(city, 'color' + n));
         if (n >= city.nHandles) {
@@ -87,13 +88,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     gui.add(city, 'angleVariation', 0, 360);
     var handleController = gui.add(city, 'nHandles', 1, 10).step(1);
     handleController.onFinishChange(function (value) {
-        for (let n = 0; n < handles.length; n++) {
+        for (var n = 0; n < handles.length; n++) {
             handles[n].destroy();
             $(colorControllers[n].__li).hide();
         }
         handles = [];
-        for (let n = 0; n < city.nHandles; n++) {
-            let handle = new Handle(new Point(Math.random() * city.width, Math.random() * city.height));
+        for (var n = 0; n < city.nHandles; n++) {
+            var handle = new Handle(new Point(Math.random() * city.width, Math.random() * city.height));
             handles.push(handle);
             $(colorControllers[n].__li).show();
         }
@@ -104,9 +105,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     gui.add(city, 'recordSVG');
     gui.add(city, 'saveSVG');
     gui.add(city, 'savePNG');
-    let OUT = -500;
-    let actors = [];
-    let nInitializedActors = 0;
+    var OUT = -500;
+    var actors = [];
+    var nInitializedActors = 0;
     function getCityAt(x, y) {
         return context.getImageData(x, y, 1, 1).data[3];
         // return context.getImageData(0, 0, city.width, city.height).data[4 * (x + y * city.width)]
@@ -125,8 +126,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function vToString(v) {
         return 'x: ' + v.x + ', y: ' + v.y;
     }
-    class Handle {
-        constructor(pos) {
+    var Handle = (function () {
+        function Handle(pos) {
             this.position = pos;
             this.radius = 17;
             this.color = '#CC3482';
@@ -144,13 +145,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
             this.handleElement.style.top = (this.position.y / window.devicePixelRatio) + 'px';
             this.handleElement.style.visibility = 'hidden';
         }
-        mouseDown(mousePosition) {
+        Handle.prototype.mouseDown = function (mousePosition) {
             if (this.position.distTo(mousePosition) < this.radius * 2) {
                 this.dragged = true;
                 this.offset = mousePosition.subtract(this.position);
             }
-        }
-        mouseMove(mousePosition) {
+        };
+        Handle.prototype.mouseMove = function (mousePosition) {
             if (this.dragged) {
                 this.position = mousePosition.subtract(this.offset);
                 context.clearRect(0, 0, city.width, city.height);
@@ -158,8 +159,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 this.handleElement.style.left = (this.position.x / window.devicePixelRatio) + 'px';
                 this.handleElement.style.top = (this.position.y / window.devicePixelRatio) + 'px';
             }
-        }
-        mouseUp(mousePosition) {
+        };
+        Handle.prototype.mouseUp = function (mousePosition) {
             if (this.dragged) {
                 this.position = mousePosition.subtract(this.offset);
                 this.dragged = false;
@@ -167,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 this.handleElement.style.top = (this.position.y / window.devicePixelRatio) + 'px';
                 init();
             }
-        }
+        };
         // draw() {
         //   context.beginPath();
         //   context.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI, false);
@@ -177,33 +178,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
         //   context.strokeStyle = '#003300';
         //   context.stroke();
         // }
-        toggle() {
+        Handle.prototype.toggle = function () {
             this.visible = !this.visible;
             this.handleElement.style.visibility = this.visible ? 'visible' : 'hidden';
-        }
-        destroy() {
+        };
+        Handle.prototype.destroy = function () {
             this.handleElement.remove();
-        }
-    }
-    class Actor {
-        constructor() {
+        };
+        return Handle;
+    }());
+    var Actor = (function () {
+        function Actor() {
             this.speed = city.speed;
             this.reset();
             this.polyline = null;
         }
-        reset() {
+        Actor.prototype.reset = function () {
             this.position = new Point(-OUT, -OUT);
             this.previousPosition = new Point(-OUT, -OUT);
             this.positionFloat = new Point(-OUT, -OUT);
             this.initialized = false;
             this.polyline = null;
-        }
-        initialize(pos = null, angle = null, incrementNInitializedActors = true, color = null) {
+        };
+        Actor.prototype.initialize = function (pos, angle, incrementNInitializedActors, color) {
+            if (pos === void 0) { pos = null; }
+            if (angle === void 0) { angle = null; }
+            if (incrementNInitializedActors === void 0) { incrementNInitializedActors = true; }
+            if (color === void 0) { color = null; }
             this.color = color;
             // if position is negative: intialize this position at a random actor position
             if (pos == null) {
                 if (nInitializedActors > 0) {
-                    let n = Math.floor(Math.random() * (nInitializedActors));
+                    var n = Math.floor(Math.random() * (nInitializedActors));
                     pos = actors[n].position.clone();
                     this.color = actors[n].color;
                 }
@@ -226,8 +232,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (incrementNInitializedActors) {
                 nInitializedActors++;
             }
-        }
-        update() {
+        };
+        Actor.prototype.update = function () {
             if (!this.initialized) {
                 return;
             }
@@ -237,8 +243,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             this.positionFloat.y += this.speed * Math.sin(this.angle * Math.PI / 180);
             this.position.x = Math.round(this.positionFloat.x);
             this.position.y = Math.round(this.positionFloat.y);
-            let ix = this.position.x;
-            let iy = this.position.y;
+            var ix = this.position.x;
+            var iy = this.position.y;
             if (ix < 0 || iy < 0 ||
                 ix >= city.width - 1 || iy >= city.height - 1 ||
                 getCityAt(ix, iy) > 0 || this.time > this.lifetime) {
@@ -253,8 +259,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     actors[nInitializedActors].initialize(this.position, null, true, this.color);
                 }
             }
-        }
-        draw() {
+        };
+        Actor.prototype.draw = function () {
             if (!this.initialized) {
                 return;
             }
@@ -267,16 +273,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
             context.closePath();
             context.stroke();
             if (city.recordSVG) {
-                let pp = this.previousPosition.divide(window.devicePixelRatio);
-                let p = this.position.divide(window.devicePixelRatio);
+                var pp = this.previousPosition.divide(window.devicePixelRatio);
+                var p = this.position.divide(window.devicePixelRatio);
                 if (this.polyline == null) {
                     this.polyline = svg.polyline([[pp.x, pp.y], [p.x, p.y]]);
                     this.polyline.stroke({ width: 0.5, color: this.color }).fill('none');
                 }
                 else {
-                    let points = this.polyline.array();
-                    let secondLast = points.value[points.value.length - 2];
-                    let secondLastPoint = new Point(secondLast[0], secondLast[1]);
+                    var points = this.polyline.array();
+                    var secondLast = points.value[points.value.length - 2];
+                    var secondLastPoint = new Point(secondLast[0], secondLast[1]);
                     secondLastPoint = secondLastPoint.divide(window.devicePixelRatio);
                     if (secondLastPoint.alignedWith(this.previousPosition, this.position)) {
                         points.value[points.value.length - 1][0] = p.x;
@@ -288,17 +294,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     this.polyline.plot(points);
                 }
             }
-        }
-    }
-    for (let i = 0; i < city.nActors; i++) {
+        };
+        return Actor;
+    }());
+    for (var i = 0; i < city.nActors; i++) {
         actors.push(new Actor());
     }
-    for (let n = 0; n < city.nHandles; n++) {
-        let handle = new Handle(new Point(Math.random() * city.width, Math.random() * city.height));
+    for (var n = 0; n < city.nHandles; n++) {
+        var handle = new Handle(new Point(Math.random() * city.width, Math.random() * city.height));
         handles.push(handle);
     }
     function init() {
-        for (let i = 0; i < city.nActors; i++) {
+        for (var i = 0; i < city.nActors; i++) {
             actors[i].reset();
         }
         nInitializedActors = 0;
@@ -313,13 +320,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
         // actors[1].initialize(new Point(city.width-20, city.height-20), 2*90);
         // actors[2].initialize(new Point(city.width-20, 20), 2*90);
         // actors[3].initialize(new Point(20, city.height-20), 0);
-        for (let n = 0; n < city.nHandles; n++) {
+        for (var n = 0; n < city.nHandles; n++) {
             actors[n].initialize(handles[n].position.clone(), Math.floor(Math.random() * 4) * 90, true, city['color' + n]);
         }
     }
     function animate() {
         requestAnimationFrame(animate);
-        for (let actor of actors) {
+        for (var _i = 0, actors_1 = actors; _i < actors_1.length; _i++) {
+            var actor = actors_1[_i];
             actor.update();
         }
     }
@@ -329,26 +337,29 @@ document.addEventListener("DOMContentLoaded", function (event) {
         init();
     }
     window.onresize = resize;
-    let mouseX = 0;
-    let mouseY = 0;
+    var mouseX = 0;
+    var mouseY = 0;
     document.addEventListener('mousedown', onDocumentMouseDown, false);
     document.addEventListener('mousemove', onDocumentMouseMove, false);
     document.addEventListener('mouseup', onDocumentMouseUp, false);
     function onDocumentMouseDown(event) {
-        let mousePosition = new Point(event.clientX * window.devicePixelRatio, event.clientY * window.devicePixelRatio);
-        for (let handle of handles) {
+        var mousePosition = new Point(event.clientX * window.devicePixelRatio, event.clientY * window.devicePixelRatio);
+        for (var _i = 0, handles_1 = handles; _i < handles_1.length; _i++) {
+            var handle = handles_1[_i];
             handle.mouseDown(mousePosition);
         }
     }
     function onDocumentMouseMove(event) {
-        let mousePosition = new Point(event.clientX * window.devicePixelRatio, event.clientY * window.devicePixelRatio);
-        for (let handle of handles) {
+        var mousePosition = new Point(event.clientX * window.devicePixelRatio, event.clientY * window.devicePixelRatio);
+        for (var _i = 0, handles_2 = handles; _i < handles_2.length; _i++) {
+            var handle = handles_2[_i];
             handle.mouseMove(mousePosition);
         }
     }
     function onDocumentMouseUp(event) {
-        let mousePosition = new Point(event.clientX * window.devicePixelRatio, event.clientY * window.devicePixelRatio);
-        for (let handle of handles) {
+        var mousePosition = new Point(event.clientX * window.devicePixelRatio, event.clientY * window.devicePixelRatio);
+        for (var _i = 0, handles_3 = handles; _i < handles_3.length; _i++) {
+            var handle = handles_3[_i];
             handle.mouseUp(mousePosition);
         }
     }

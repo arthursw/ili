@@ -1,0 +1,1737 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"de",
+				"devicePixelRatio\tproperty"
+			],
+			[
+				"nu",
+				"number\tkeyword"
+			],
+			[
+				"po",
+				"position\tproperty"
+			],
+			[
+				"n",
+				"nHandles\tproperty"
+			],
+			[
+				"poly",
+				"polyline\tmethod"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"re",
+				"recordSVG\tproperty"
+			],
+			[
+				"Shape",
+				"ShapeGUIElem\tproperty"
+			],
+			[
+				"Proper",
+				"Property\tlet"
+			],
+			[
+				"Pr",
+				"Property\tlet"
+			],
+			[
+				"Spin",
+				"SpinBoxName\tparameter"
+			],
+			[
+				"Prop",
+				"PropertyName\tparameter"
+			],
+			[
+				"Pro",
+				"Property\tclass"
+			],
+			[
+				"Is",
+				"IsNearlyZero\tmethod"
+			],
+			[
+				"C",
+				"CrossProduct\tmethod"
+			],
+			[
+				"Vec",
+				"Vector\tclass"
+			],
+			[
+				"A",
+				"Array\tmethod"
+			],
+			[
+				"E",
+				"Equals\tmethod"
+			],
+			[
+				"Kismet",
+				"KismetMathLibrary\tclass"
+			],
+			[
+				"Selec",
+				"SelectionActions\tlet"
+			],
+			[
+				"GetSel",
+				"GetSelectedElements\tmethod"
+			],
+			[
+				"GetSe",
+				"GetSelectedElements\tmethod"
+			],
+			[
+				"Key",
+				"KeyName\tlet"
+			],
+			[
+				"Clos",
+				"ClosestEdgeFromStart\tlet"
+			],
+			[
+				"Ray",
+				"RayStart\tlet"
+			],
+			[
+				"Las",
+				"LastVertexWorld\tlet"
+			],
+			[
+				"Closes",
+				"FindClosestPointOnSegment\tmethod"
+			],
+			[
+				"Kismtet",
+				"KismetMathLibrary\tclass"
+			],
+			[
+				"Lo",
+				"LonelyEdges\tproperty"
+			],
+			[
+				"F",
+				"GetFaces\tmethod"
+			],
+			[
+				"In",
+				"InverseTransformLocation\tmethod"
+			],
+			[
+				"Que",
+				"QuantizedPosition\tlet"
+			],
+			[
+				"GetCom",
+				"GetComponentToWorld\tmethod"
+			],
+			[
+				"Q",
+				"QuantizeRoundV\tfunction"
+			],
+			[
+				"World",
+				"WorldVertex\tlet"
+			],
+			[
+				"Un",
+				"Undetermined\tproperty"
+			],
+			[
+				"bMu",
+				"bMultipleSmoothEdge\tlet"
+			],
+			[
+				"bM",
+				"bMultipleSmoothEdge\tlet"
+			],
+			[
+				"in",
+				"indexOf\tmethod"
+			],
+			[
+				"Mesh",
+				"MeshGroup\tlet"
+			],
+			[
+				"IsN",
+				"IsNearlyZero\tfunction"
+			],
+			[
+				"Tr",
+				"Transform\tclass"
+			],
+			[
+				"Norm",
+				"Normal"
+			],
+			[
+				"Get",
+				"GetFirstVertex\tmethod"
+			],
+			[
+				"L",
+				"LengthSquared\tmethod"
+			],
+			[
+				"S",
+				"SubtractV\tmethod"
+			],
+			[
+				"Setti",
+				"Settings\talias"
+			],
+			[
+				"inst",
+				"instanceof\tkeyword"
+			],
+			[
+				"B",
+				"BIG_NUMBER\tconst"
+			],
+			[
+				"SetT",
+				"SetTransformBox\tmethod"
+			],
+			[
+				"T",
+				"Tool\tproperty"
+			],
+			[
+				"Name",
+				"NameProperty\tclass"
+			],
+			[
+				"bC",
+				"bCreateFromBaseCenter\tlet"
+			],
+			[
+				"ShapeC",
+				"ShapeCreationType\tenum"
+			],
+			[
+				"Desel",
+				"DeselectAllEditableActors\tmethod"
+			],
+			[
+				"Set",
+				"SetComponents\tmethod"
+			],
+			[
+				"GetC",
+				"GetCenter\tmethod"
+			],
+			[
+				"GetM",
+				"GetMinElement\tmethod"
+			],
+			[
+				"M",
+				"Min\tproperty"
+			],
+			[
+				"SetAc",
+				"SetActorLocation\tmethod"
+			],
+			[
+				"GetSele",
+				"GetSelectionBox\tmethod"
+			],
+			[
+				"P",
+				"PBEditor\tproperty"
+			],
+			[
+				"N",
+				"IsNearlyEqual\tfunction"
+			],
+			[
+				"ins",
+				"instanceof\tkeyword"
+			],
+			[
+				"Mous",
+				"MouseHitResult\tproperty"
+			],
+			[
+				"Mou",
+				"MouseHitResult\tproperty"
+			],
+			[
+				"PBE",
+				"PBEditor\talias"
+			],
+			[
+				"Linea",
+				"CreateLinearColor\tfunction"
+			],
+			[
+				"Gizmo",
+				"GizmoPosition\tlet"
+			],
+			[
+				"CollisionChannel",
+				"CollisionChannelEditableMesh\tconst"
+			],
+			[
+				"ECC_G",
+				"ECC_GameTraceChannel12\tproperty"
+			],
+			[
+				"Hit",
+				"GetHitResultUnderCursor\tmethod"
+			],
+			[
+				"Sel",
+				"SelectCommand\talias"
+			],
+			[
+				"Edge",
+				"EdgeColor\tparameter"
+			],
+			[
+				"AD",
+				"AddV\tmethod"
+			],
+			[
+				"Ed",
+				"EditMode\tproperty"
+			],
+			[
+				"Clea",
+				"ClearTransformMesh\tmethod"
+			],
+			[
+				"Cle",
+				"ClearTransformMesh\tmethod"
+			],
+			[
+				"Create",
+				"CreateTransformMesh\tmethod"
+			],
+			[
+				"GetB",
+				"GetBox\tmethod"
+			],
+			[
+				"Procedur",
+				"ProceduralMeshComponentJS\talias"
+			],
+			[
+				"Select",
+				"SelectionMesh\tproperty"
+			],
+			[
+				"Begin",
+				"BeginTransformCommand\tmethod"
+			],
+			[
+				"Sele",
+				"SelectedElements\tparameter"
+			],
+			[
+				"Eq",
+				"EqualsF\tmethod"
+			],
+			[
+				"Add",
+				"AddV\tmethod"
+			],
+			[
+				"D",
+				"DivideF\tmethod"
+			],
+			[
+				"Ver",
+				"VertexToVertex\tlet"
+			],
+			[
+				"Edi",
+				"EditableMeshComponent\tscript"
+			],
+			[
+				"Proced",
+				"ProceduralMeshComponentJS\tclass"
+			],
+			[
+				"t",
+				"ToVector2D\tmethod"
+			],
+			[
+				"Frus",
+				"FrustumComponent\tproperty"
+			],
+			[
+				"De",
+				"Destroy\tmethod"
+			],
+			[
+				"cons",
+				"constructor\tkeyword"
+			],
+			[
+				"a",
+				"Add\tmethod"
+			],
+			[
+				"Com",
+				"Compile\tfunction"
+			],
+			[
+				"New",
+				"NewF\tlet"
+			],
+			[
+				"Cr",
+				"Create\tmethod"
+			],
+			[
+				"b",
+				"bCurved\tproperty"
+			],
+			[
+				"Vert",
+				"Vertices\tlet"
+			],
+			[
+				"ECol",
+				"ECollisionChannel\ttype"
+			],
+			[
+				"Colli",
+				"SetCollisionObjectType\tmethod"
+			],
+			[
+				"Coll",
+				"SetCollisionObjectType\tmethod"
+			],
+			[
+				"Cl",
+				"ClearCollisionConvexMeshes\tmethod"
+			],
+			[
+				"UpdateM",
+				"UpdateMesh\tmethod"
+			],
+			[
+				"Frustum",
+				"FrustumEA\tproperty"
+			],
+			[
+				"Upda",
+				"bShouldUpdatePhysicsVolume\tproperty"
+			],
+			[
+				"bA",
+				"bAddToSelection\tlet"
+			],
+			[
+				"Ra",
+				"Ray\tlet"
+			],
+			[
+				"Sett",
+				"Settings\talias"
+			],
+			[
+				"GetCo",
+				"GetCorners\tmethod"
+			],
+			[
+				"Mes",
+				"MeshElementVisibility\tparameter"
+			],
+			[
+				"GetV",
+				"GetVertices\tmethod"
+			],
+			[
+				"Me",
+				"Mesh\tproperty"
+			],
+			[
+				"Subtr",
+				"SubtractV\tmethod"
+			],
+			[
+				"First",
+				"FirstVertexWorld\tlet"
+			],
+			[
+				"Near",
+				"IsNearlyZero\tfunction"
+			],
+			[
+				"I",
+				"ImpactPoint\tproperty"
+			],
+			[
+				"EChannel",
+				"ECollisionChannel\ttype"
+			],
+			[
+				"Ad",
+				"AddV\tmethod"
+			],
+			[
+				"O",
+				"OutRayOrigin\tproperty"
+			],
+			[
+				"TO",
+				"ToVector\tmethod"
+			],
+			[
+				"LineTrace",
+				"LineTraceByChannel\tmethod"
+			],
+			[
+				"Inter",
+				"Intersections\tlet"
+			],
+			[
+				"Vector",
+				"Vector2D\tclass"
+			],
+			[
+				"Line",
+				"GetIntersectionBetweenTwoLines\tfunction"
+			],
+			[
+				"Cam",
+				"CameraPosition\tparameter"
+			],
+			[
+				"Verte",
+				"VertexVisibility\tlet"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					""
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Re-run sketch"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Run sketch (Processing 3 only)"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Run sketch fullscreen"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Export sketch as application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Kill running sketches"
+				]
+			],
+			[
+				"Packages/Processing/Build Systems/Processing.sublime-build",
+				"Re-run sketch"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 387.0,
+		"last_filter": "prv",
+		"selected_items":
+		[
+			[
+				"prv",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: Add Repository",
+				"Package Control: Add Repository"
+			],
+			[
+				"json",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"settin",
+				"Preferences: Settings"
+			],
+			[
+				"showe",
+				"TypeScript: Show Error List"
+			],
+			[
+				"error",
+				"TypeScript: Show Error List"
+			],
+			[
+				"fo",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 349.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/Arthur/Projects/Tiny/ili",
+		"/Users/Arthur/Projects/Tiny/ili/ts"
+	],
+	"file_history":
+	[
+		"/Users/Arthur/Projects/Tiny/ili/index.html",
+		"/Users/Arthur/Projects/Tiny/ili/ts/main.ts",
+		"/Users/Arthur/Projects/Tiny/ImageResizer.py",
+		"/Users/Arthur/Projects/IDLV/PenPlotter/Marlin/README.md",
+		"/Users/Arthur/Libraries/spacebrew/spacebrew.js",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/events.js",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/GizmoHelper.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Commands/GizmoTransformCommand.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Commands/ShapeCommand.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Utils.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Vertex.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Edge.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/ProBuilder.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/ProceduralMeshComponent.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Commands/CommandManager.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Commands/SelectCommand.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/EditableMeshComponent.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/CSG/CSG.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/PBGUI.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UVEditor/UVEditor.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UVEditor/UVEditorInterfaces.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/typings/ue.d.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ProBuilderAliases.js",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Commands/LineCommand.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/SelectionActor.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Mesh.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Commands/TransformCommand.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/Offset/OffsetCommand.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Face.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UV/UVFace.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/extension-ProBuilder.js",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/Snap/Snap.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/FrustumMeshComponent.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Commands/DirectActionCommand.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Octree.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/SelectionActions/SelectionActions.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/EditableActor.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/.gitignore",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Content/Scripts/.gitignore",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-n2s0vj/romanesco",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-ctzyl7/arthurmasson",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-_wuniq/ghost",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-525rgu/ghost",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-fzm5wb/arthurmasson",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-toevzy/romanesco",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/Readme.md",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/ObjectActions/ObjectActions.ts",
+		"/Users/Arthur/Library/Application Support/Sublime Text 3/Packages/Color Scheme - Default/Monokai.tmTheme",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/GitCommit.sh",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Gizmo.uasset",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UVEditor/UVEditableMeshComponent.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/AutoIntersections/AutoIntersections.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Commands/AtomicCommand.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ProBuilderTypings/ProBuilder.d.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/PluginManager/typings/jquery.d.ts",
+		"/Users/Arthur/Projects/Tiny/Catapult3D/catapult.openscad",
+		"/Users/Arthur/Projects/Tiny/Catapult3D/catapultLayed.openscad",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Commands/Command.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UVEditor/UVEditorGUI.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/PluginManager/PluginWindow.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Settings.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/FaceActions/FaceActions.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Commands/ExtrudeCommand.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/EdgeActions/EdgeActions.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/VertexActions/VertexActions.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UV/UVGUI.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UVEditor/UVEditorProcessing.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/PBjson2u.js",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/Offset/Offset.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/Offset/OffsetGUI.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Animator.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UV/UVVertex.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UV/UVAtomicCommand.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/PluginManager/PluginManagerGUI.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/PluginManager/PluginManager.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UVEditor/UVGizmo.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UV/UVProcessing.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Commands/RectangleCommand.ts",
+		"/Users/Arthur/Documents/.mdp.txt",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/json2u.js",
+		"/Applications/MAMP/htdocs/arthurmasson/wp-config.php",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-j73mf4/config.js",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-dmwrb_/config.",
+		"/Applications/MAMP/htdocs/arthurmasson/wp-content/themes/arthurmasson/project.config.js",
+		"/Users/Arthur/Projects/IDLV/polargraphcontroller/polargraphcontroller.pde",
+		"/Users/Arthur/Projects/Tiny/3DPaperMaker/License.md",
+		"/Users/Arthur/Projects/Tiny/3DPaperMaker/.gitignore",
+		"/Users/Arthur/.hammerspoon/init.lua",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-2wdo49/arthurmasson.conf",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-u1d7p0/000-default.conf",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-up7j6k/arthurmasson.conf",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-g0wb8q/wp-config.php",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/Unreal.js-core/install-v8-libs.sh",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-yd6r29/wp-config.php",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-zdwo8z/wp-config.php",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-dfbp23/wp-config.php",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-n8b3hg/wp-config.php",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-izwhrl/wp-config.php",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Content/Scripts/extension-ProBuilder.js",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UV/UV.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UV/UVInterfaces.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UVEditor/UVAtomicCommand.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UVEditor/UVWeldCommand.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Readme.md",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Content/Scripts/CopyScripts.js",
+		"/Users/Arthur/Projects/Unreal Projects/untitled",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/GUI/Window.ts",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/LineBatcher.ts",
+		"/Users/Arthur/Projects/Unreal Projects/untitled.json",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/plugins-config.json",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Content/Scripts/plugins.json",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Content/Scripts/plugins-config.json",
+		"/Users/Arthur/Projects/Unreal Projects/Unreal.js/Examples/Content/Scripts/extension-ProBuilderMemTest.js",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-pqvflt/httpd.conf",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-febpul/wp-config.php",
+		"/var/folders/sz/f97g80v149b689p1jvnwybgr0000gn/T/rsub-dhty6k/wp-config.php",
+		"/Users/Arthur/Desktop/octreeI.cpp",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/CSG/PBCSG.ts",
+		"/Users/Arthur/Projects/Tiny/PassoirePassword/script.js",
+		"/Users/Arthur/Library/Application Support/Epic/UnrealEngine/4.13/Saved/ProBuilder/settings.json",
+		"/Users/Arthur/Library/Application Support/Sublime Text 3/Packages/TypeScript/Preferences.sublime-settings",
+		"/Users/Arthur/Library/Application Support/Sublime Text 3/Packages/TypeScript/TypeScript.sublime-settings",
+		"/Users/Arthur/Library/Application Support/Sublime Text 3/Packages/User/TypeScript.sublime-settings",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/SelectionActions/README.md",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/AutoIntersections/Readme.md",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/PluginManager/plugins.json",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/FaceActions/README.md",
+		"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/AutoIntersections/AutoIntersectionsProcessing.ts"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"ts/Plugins/",
+			"",
+			"UV/",
+			"",
+			"/Users/Arthur/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ts/Plugins/UV",
+			"",
+			"IsKeyDown",
+			"",
+			"Editor/Persona/*",
+			"",
+			"Editor/Persona/*",
+			"",
+			"Editor/Persona/*",
+			"",
+			"ts/",
+			"ProBuilderTypings/",
+			"",
+			"ts/",
+			"ProBuilderTypings/",
+			"ts/",
+			"",
+			"ProBuilderTypings/",
+			"ts/",
+			"ProBuilderTypings/",
+			"ts/",
+			"",
+			"ts/",
+			"",
+			"ProBuilderTypings/",
+			"ts/",
+			"ProBuilderTypings/",
+			"ts/",
+			"ProBuilderTypings/",
+			"ts/",
+			"",
+			"typings/_part_0_ue.d.ts",
+			"typings/",
+			"",
+			"ts/",
+			"",
+			"ts/",
+			"",
+			"ts/",
+			"",
+			"ts/",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"divde",
+			"draw()",
+			"saveSvgFile",
+			"svgElement",
+			"svg",
+			"saveAs",
+			"saveSvgFile",
+			"saveSvgFile2",
+			"saveSvgFile",
+			"svgElement",
+			"DocumentBy",
+			"documentBy",
+			".visibility",
+			"saveSvgFile",
+			"svg",
+			"CreateCheckboxForData",
+			"CreateCheckbox",
+			"CreateSpinBo",
+			"ShapeGUIElems",
+			"CreateSpin",
+			"SetObject",
+			"SetEnabledOnAllButElems",
+			"children",
+			"NumCreationSteps",
+			"Utils.Clamp(NumSegments, 4, 48)",
+			"Utils.SetMin(Height, 0.1)",
+			"Math.max(5, Math.abs(Radius))",
+			"FinalRadius",
+			"NumSides",
+			"Generate",
+			"const _ =",
+			"bPreventGenerateOnChange",
+			"CompletionState",
+			"HasNullArea",
+			"IsPlanar",
+			"this.PointDistanceToLine",
+			"ProBuilder.PointDistanceToLine",
+			"PointDistanceToLine",
+			"global.ProBuilder.GetOrthogonalVectors",
+			"GetOrthogonalVector",
+			"ComputeBaryCentric2D",
+			"GetBaryCentric2D",
+			"PointsAreCoplanar",
+			"this.PointsAreCoplanar",
+			"global.ProBuilder.PointsAreCoplanar",
+			"PointsAreCoplanar",
+			"GetOrthogonalVector",
+			"this.",
+			"Utils.",
+			"PointsAreCoplanar",
+			"IsPlanar",
+			"this.PlaneNormal",
+			"SetPlaneFromMeshElement",
+			"PreventManyFacesPerEdges",
+			"HitIn",
+			", null, true",
+			"CreateFacesFromVertices",
+			"CreateEdgesFromVerticesAndIntersectWithThem",
+			"bLoopVertices",
+			"loop",
+			"CreateFacesFromVertices",
+			"c'est beau c",
+			"SelectionActions",
+			"CheckCommandShortcuts",
+			"SelectLoopElem",
+			"Ring",
+			"EdgeActions",
+			"VertexActions",
+			"FaceActions",
+			"VertexActions",
+			"Quantize",
+			"Enable",
+			"SetVisibi",
+			"SM",
+			"SA =",
+			"Sa =",
+			"ParentArgs",
+			"ContainerName",
+			"CreateSpinBox",
+			"CSGGroupSpinBoxElem",
+			"CreateSpinBox",
+			"SmoothGroupSpinBoxElem",
+			"FaceGroupSpinBoxElem",
+			"CreateSpinBox",
+			"CreateText",
+			"CreateSpinBox",
+			"ParentArgs",
+			"children",
+			"Unchecked",
+			"Smooth",
+			"UpdateFaceSmoothGroupsFromEdgeSmooth",
+			"SetSmooth",
+			"IsPointOnLine",
+			"PointDistanceToLine",
+			"IsNearlyZero",
+			"PointDistanceToLine",
+			"SegmentIntersection2D",
+			"const FVector& ",
+			"GetIntersectionBetweenTwoLines",
+			"Segment",
+			"Visibility",
+			"Segment",
+			"GetIntersectionsWithSegment",
+			"GetIntersectionBetweenTwoLines",
+			"GetIntersectionsWithSegment",
+			"GetIntersectionBetweenTwoLines",
+			"IntersectsSegmentFromOriginAndDirection",
+			"Visibility",
+			"CreateSelectionMesh",
+			"SelectTransform",
+			"Select",
+			"SetTool",
+			"ProceduralMeshComponentJSClass",
+			"AddAtomicCommand",
+			"IsCommandDown",
+			"this.KeyStates",
+			"PureKeyName",
+			"SetKeyStates",
+			"this.IsKeyDown(",
+			"global.ProBuilder.IsKeyDown(",
+			"this.IsKeyDownPB",
+			"IsKeyDown",
+			"IsKeyDown(",
+			"IsKeyDown",
+			"this.IsKeyDown",
+			"Key",
+			"bUENavigationStyleAndRemoveSelection",
+			"bRemoveFromSelection"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Utils.Clamp(NumSegments, 3, 48)",
+			"Utils.SetMin(Height, 1)",
+			"Math.max(1, Math.abs(Radius))",
+			"Utils.GetOrthogonalVectors",
+			"Utils.PointsAreCoplanar",
+			"",
+			"Utils.IsKeyDown(",
+			"Utils.IsKeyDownNoPrefix",
+			"IsKeyDownPB",
+			"CurrentActor",
+			"GetSelectionBox",
+			"CollisionChannelProBuilder",
+			"TraceTypeProBuilder",
+			"SelectionMaterialInstance",
+			"CreateSelectionMesh",
+			"SelectionMesh",
+			"EA.",
+			"instanceof <any>EditableMeshComponentClass",
+			"EditableMeshComponentClass",
+			"HitActors",
+			"bJustClicked",
+			"FirstVertexScreen",
+			"F",
+			"this.Vertices",
+			"Utils.TSet<Edge>",
+			"bPreventManyFacesPerEdges",
+			"bFavorExistingFaces",
+			"DrawLinesAndUpdateBounds()",
+			"ComponentToWorld",
+			"TraceResults.concat(",
+			"WorldSpaceEdges",
+			"EditableActorsToUpdate",
+			"global.ProBuilder.GUI.AddChildToElem(global.ProBuilder.GUI.$1, $2)",
+			"IsPointInSegmentExcludingEndPoints",
+			"IsPointIncludedInSegment",
+			"CommandNameToIndex.get(\"$1\")",
+			"this.Commands",
+			"this.commands",
+			"this.Tab",
+			"this.Tabs",
+			"Context",
+			"this.CommandList",
+			"this.Context",
+			"this.Commands",
+			"ProBuilder",
+			"global.Root.GetEngine()",
+			"Utils.GetWorld()",
+			"ProBuilder: AProBuilder",
+			"ProBuilder: AProBuilder,",
+			"import { AProBuilder",
+			"## ",
+			"# ",
+			"",
+			"## ",
+			"",
+			"MeshGroupToComputedMesh",
+			" = null",
+			"global.",
+			" = null",
+			"this.",
+			"this.ê",
+			"this.",
+			"]",
+			"[",
+			"",
+			"virtual bool ",
+			"Edge",
+			".SetSmoothGroup($1)",
+			".UVEditor.UpdateViewport()",
+			"!this.IsDebugMode(Utils.DebugMode.DebugCheckValidity)",
+			"this.IsDebugMode(Utils.DebugMode.Debug)",
+			"global.ProBuilder.IsDebugMode(Utils.DebugMode.Debug)",
+			"global.ProBuilder.IsDebugMode(Utils.DebugMode.DebugCheckValidity)",
+			"if(global.ProBuilder.DebugMode == Utils.DebugMode.Debug) { $1 }",
+			"Utils.DebugMode.",
+			"ProBuilder",
+			"DebugCheckValidity",
+			"col-lg-6",
+			"col-lg-2",
+			"col-lg-12",
+			"CurrentEdge",
+			"",
+			"CurrentEdge",
+			"TheMesh.",
+			"global.ProBuilder.",
+			"TheMesh.",
+			"global.ProBuilder.",
+			"SnappedVector",
+			"SnappedMeshElement",
+			"SnappedVector",
+			"SnappedMeshElement",
+			"global.ProBuilder.",
+			"TheMesh.",
+			"TheFace.",
+			"TheMesh.",
+			"",
+			"Face",
+			"UVEditor",
+			"global.ProBuilder.PluginManager.UVEditor",
+			"this.PluginManager.UVEditor",
+			"UVEditor.Weld",
+			"OpenSource",
+			"\"",
+			"ProcessUVs",
+			"global.ProBuilder.GizmoHelper",
+			".PluginManager.UV != null) {",
+			"UV.GUI",
+			"UV.Vertex",
+			"UV.Face",
+			"UV.GUI",
+			"VUV",
+			"UV.Weld",
+			"UVWeld.UVWeldCommand",
+			"UV.Gizmo",
+			"UV.Processing",
+			": any",
+			"",
+			"export function ",
+			"UpdateUVVertex",
+			"UV.Vertex",
+			".UpdateUVGUI",
+			"UV.GUI",
+			"",
+			"import { UVGUI } from \"./UVGUI\"",
+			"",
+			")",
+			"",
+			"UVProcessing"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.errorlist":
+	{
+		"height": 253.0
+	},
+	"output.exec":
+	{
+		"height": 207.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "ili.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"PBGUI.ts"
+			],
+			[
+				"pmc",
+				"ProceduralMeshComponent.ts"
+			],
+			[
+				"utils",
+				"Utils.ts"
+			],
+			[
+				"shape",
+				"Commands/ShapeCommand.ts"
+			],
+			[
+				"pbgui",
+				"PBGUI.ts"
+			],
+			[
+				"auto",
+				"Plugins/AutoIntersections/AutoIntersections.ts"
+			],
+			[
+				"extru",
+				"Commands/ExtrudeCommand.ts"
+			],
+			[
+				"pb",
+				"ProBuilder.ts"
+			],
+			[
+				"emc",
+				"EditableMeshComponent.ts"
+			],
+			[
+				"trn",
+				"Commands/TransformCommand.ts"
+			],
+			[
+				"ex",
+				"Commands/ExtrudeCommand.ts"
+			],
+			[
+				"p",
+				"ProBuilder.ts"
+			],
+			[
+				"face",
+				"Face.ts"
+			],
+			[
+				"rect",
+				"Commands/RectangleCommand.ts"
+			],
+			[
+				"gizm",
+				"GizmoHelper.ts"
+			],
+			[
+				"ed",
+				"Edge.ts"
+			],
+			[
+				"aut",
+				"Plugins/AutoIntersections/AutoIntersections.ts"
+			],
+			[
+				"line",
+				"Commands/LineCommand.ts"
+			],
+			[
+				"selec",
+				"Plugins/SelectionActions/SelectionActions.ts"
+			],
+			[
+				"edge",
+				"Edge.ts"
+			],
+			[
+				"offset",
+				"Plugins/Offset/OffsetCommand.ts"
+			],
+			[
+				"sele",
+				"Plugins/SelectionActions/SelectionActions.ts"
+			],
+			[
+				"interse",
+				"Plugins/AutoIntersections/AutoIntersections.ts"
+			],
+			[
+				"edgea",
+				"Plugins/EdgeActions/EdgeActions.ts"
+			],
+			[
+				"edges",
+				"Plugins/EdgeActions/EdgeActions.ts"
+			],
+			[
+				"trna",
+				"Commands/TransformCommand.ts"
+			],
+			[
+				"verte",
+				"Plugins/VertexActions/VertexActions.ts"
+			],
+			[
+				"gui",
+				"PBGUI.ts"
+			],
+			[
+				"ver",
+				"Vertex.ts"
+			],
+			[
+				"fac",
+				"Face.ts"
+			],
+			[
+				"gizmo",
+				"GizmoHelper.ts"
+			],
+			[
+				"mesh",
+				"Mesh.ts"
+			],
+			[
+				"pr",
+				"ProceduralMeshComponent.ts"
+			],
+			[
+				"atom",
+				"Commands/AtomicCommand.ts"
+			],
+			[
+				"com",
+				"Commands/CommandManager.ts"
+			],
+			[
+				"atomic",
+				"Commands/AtomicCommand.ts"
+			],
+			[
+				"uved",
+				"Plugins/UVEditor/UVEditor.ts"
+			],
+			[
+				"shapecommand.ts",
+				"Commands/ShapeCommand.ts"
+			],
+			[
+				"csg",
+				"Plugins/CSG/CSG.ts"
+			],
+			[
+				"fa",
+				"Face.ts"
+			],
+			[
+				"pro",
+				"ProBuilder.ts"
+			],
+			[
+				"sh",
+				"Commands/ShapeCommand.ts"
+			],
+			[
+				"ea",
+				"EditableActor.ts"
+			],
+			[
+				"comm",
+				"Commands/CommandManager.ts"
+			],
+			[
+				"commm",
+				"Commands/CommandManager.ts"
+			],
+			[
+				"ob",
+				"Plugins/ObjectActions/ObjectActions.ts"
+			],
+			[
+				"gi",
+				"GizmoHelper.ts"
+			],
+			[
+				"prob",
+				"ProBuilder.ts"
+			],
+			[
+				"oc",
+				"Octree.ts"
+			],
+			[
+				"giz",
+				"GizmoHelper.ts"
+			],
+			[
+				"actor",
+				"EditableActor.ts"
+			],
+			[
+				"tran",
+				"Commands/TransformCommand.ts"
+			],
+			[
+				"direc",
+				"Commands/DirectActionCommand.ts"
+			],
+			[
+				"vert",
+				"Vertex.ts"
+			],
+			[
+				"gm",
+				"GizmoHelper.ts"
+			],
+			[
+				"fce",
+				"Face.ts"
+			],
+			[
+				"ve",
+				"Vertex.ts"
+			],
+			[
+				"me",
+				"Mesh.ts"
+			],
+			[
+				"edg",
+				"Edge.ts"
+			],
+			[
+				"gh",
+				"GizmoHelper.ts"
+			],
+			[
+				"shae",
+				"Commands/ShapeCommand.ts"
+			],
+			[
+				"go",
+				"GizmoHelper.ts"
+			],
+			[
+				"g",
+				"GizmoHelper.ts"
+			],
+			[
+				"sel",
+				"SelectionActor.ts"
+			],
+			[
+				"em",
+				"EditableMeshComponent.ts"
+			],
+			[
+				"snp",
+				"Plugins/Snap/Snap.ts"
+			],
+			[
+				"snap",
+				"Plugins/Snap/Snap.ts"
+			],
+			[
+				"seel",
+				"SelectionActor.ts"
+			],
+			[
+				"autointersections.ts",
+				"Plugins/AutoIntersections/AutoIntersections.ts"
+			],
+			[
+				"obje",
+				"Plugins/ObjectActions/ObjectActions.ts"
+			],
+			[
+				"v",
+				"Vertex.ts"
+			],
+			[
+				"e",
+				"Edge.ts"
+			],
+			[
+				"f",
+				"Face.ts"
+			],
+			[
+				"objec",
+				"Plugins/ObjectActions/ObjectActions.ts"
+			],
+			[
+				"fr",
+				"FrustumMeshComponent.ts"
+			],
+			[
+				"fru",
+				"FrustumMeshComponent.ts"
+			],
+			[
+				"frus",
+				"FrustumMeshComponent.ts"
+			],
+			[
+				"comma",
+				"Commands/CommandManager.ts"
+			],
+			[
+				"shp",
+				"Commands/ShapeCommand.ts"
+			],
+			[
+				"uti",
+				"Utils.ts"
+			],
+			[
+				".d.ts",
+				"PluginManager/typings/jquery.d.ts"
+			],
+			[
+				"utisl",
+				"Utils.ts"
+			],
+			[
+				"edgeactions",
+				"Plugins/EdgeActions/EdgeActions.ts"
+			],
+			[
+				"extr",
+				"Commands/ExtrudeCommand.ts"
+			],
+			[
+				"extrude",
+				"Commands/ExtrudeCommand.ts"
+			],
+			[
+				"linecom",
+				"Commands/LineCommand.ts"
+			],
+			[
+				".d.",
+				"~/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ProBuilderTypings/ProBuilder.d.ts"
+			],
+			[
+				"octre",
+				"Octree.ts"
+			],
+			[
+				".d.t",
+				"~/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/ProBuilderTypings/ProBuilder.d.ts"
+			],
+			[
+				"edi",
+				"EditableActor.ts"
+			],
+			[
+				"uveditorpro",
+				"Plugins/UVEditor/UVEditorProcessing.ts"
+			],
+			[
+				"tr",
+				"Commands/TransformCommand.ts"
+			],
+			[
+				"oct",
+				"Octree.ts"
+			],
+			[
+				"inter",
+				"Plugins/AutoIntersections/AutoIntersections.ts"
+			],
+			[
+				"faceac",
+				"Plugins/FaceActions/FaceActions.ts"
+			],
+			[
+				"vertex",
+				"Plugins/VertexActions/VertexActions.ts"
+			],
+			[
+				"edgeac",
+				"Plugins/EdgeActions/EdgeActions.ts"
+			],
+			[
+				"octree",
+				"Octree.ts"
+			],
+			[
+				"octr",
+				"Octree.ts"
+			],
+			[
+				"mc",
+				"EditableMeshComponent.ts"
+			],
+			[
+				"sett",
+				"Settings.ts"
+			],
+			[
+				"facea",
+				"Plugins/FaceActions/FaceActions.ts"
+			],
+			[
+				"off",
+				"Plugins/Offset/Offset.ts"
+			],
+			[
+				"extrud",
+				"Commands/ExtrudeCommand.ts"
+			],
+			[
+				"anim",
+				"Animator.ts"
+			],
+			[
+				"animat",
+				"Animator.ts"
+			],
+			[
+				"ext",
+				"Commands/ExtrudeCommand.ts"
+			],
+			[
+				"auti",
+				"Plugins/AutoIntersections/AutoIntersections.ts"
+			],
+			[
+				"exten",
+				"~/Projects/Unreal Projects/probuilderjs/Plugins/ProBuilder/Content/Scripts/extension-ProBuilder.js"
+			],
+			[
+				"fae",
+				"Face.ts"
+			],
+			[
+				"etr",
+				"Commands/ExtrudeCommand.ts"
+			],
+			[
+				"plumin",
+				"PluginManager/PluginManagerGUI.ts"
+			],
+			[
+				"probuil",
+				"ProBuilder.ts"
+			],
+			[
+				"uvedi",
+				"Plugins/UVEditor/UVEditor.ts"
+			],
+			[
+				"plgin",
+				"PluginManager/PluginManager.ts"
+			],
+			[
+				"plugin",
+				"PluginManager/PluginManagerGUI.ts"
+			],
+			[
+				"uve",
+				"Plugins/UVEditor/UVEditor.ts"
+			],
+			[
+				"pluginm",
+				"PluginManager/PluginManager.ts"
+			],
+			[
+				"uv",
+				"Plugins/UV/UVGUI.ts"
+			],
+			[
+				"uvd",
+				"Plugins/UVEditor/UVEditor.ts"
+			],
+			[
+				"exte",
+				"~/Projects/Unreal Projects/probuilderjs/Content/Scripts/extension-ProBuilder.js"
+			],
+			[
+				"compo",
+				"EditableMeshComponent.ts"
+			],
+			[
+				"meh",
+				"Mesh.ts"
+			],
+			[
+				"util",
+				"Utils.ts"
+			],
+			[
+				"sha",
+				"Commands/ShapeCommand.ts"
+			],
+			[
+				"window",
+				"GUI/Window.ts"
+			],
+			[
+				"trans",
+				"Commands/TransformCommand.ts"
+			],
+			[
+				"editbal",
+				"EditableActor.ts"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Projects/SublimeProjects/Romanesco-client.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 67.0,
+		"last_filter": "EKeys",
+		"selected_items":
+		[
+			[
+				"EKeys",
+				"GetKeys"
+			],
+			[
+				"CreateFacesFromEdges",
+				"CreateFacesFromEdges"
+			],
+			[
+				"CreateFacesFom",
+				"CreateFacesFromEdges"
+			],
+			[
+				"UTransBuffer",
+				"UTransBuffer"
+			],
+			[
+				"actor",
+				"ActorBeginOverlap"
+			]
+		],
+		"width": 395.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 248.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,6 +1,7 @@
 # ili
 
 [ili](https://arthursw.github.io/ili/)
+![ili](ili.png)
 
 A sort of city generator artwork
 
@@ -12,3 +13,7 @@ Albuquerque, New Mexico
 complexification.net
 
 For any question about licensing, contact him (I would put an MIT license)
+
+
+
+To compile: `tsc`
